@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.idea/
+.vscode/
+logs/
+airflow/logs/
+data/raw/*
+data/processed/*
+*.xlsx
+*.csv
