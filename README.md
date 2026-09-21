@@ -42,6 +42,21 @@ The pipeline calculates:
 * Average transaction value
 * Month-over-month growth
 
+## Key Findings
+
+Analysis period: **August 2023 – July 2026** (36 monthly RBI PSI reports). Dashboard: [`figures/Dashboard.png`](figures/Dashboard.png).
+
+![RBI UPI Payment Analytics Dashboard — Executive Overview](figures/Dashboard.png)
+
+1. **Sustained growth in scale** — Monthly UPI transaction **volume** and **value** both trend upward over the full period, consistent with continued adoption of UPI as a primary payment rail in India.
+
+2. **Volume-led expansion** — Total activity rises even as **average transaction value** drifts down (roughly ₹1,500 toward ~₹1,260). Growth is driven by **more payments**, not larger payments per transaction.
+
+3. **Shift toward smaller tickets** — Falling average ticket size alongside rising volume suggests broader use for **high-frequency, low-value** payments (e.g. retail, QR, everyday P2P), not only occasional large transfers.
+
+4. **Volatile month-over-month volume growth** — MoM volume growth oscillates (often between about -7% and +14%), with occasional negative months. Long-run **level trends** are more stable indicators of structural growth than any single month’s growth rate.
+
+
 
 ## How to Run
 
