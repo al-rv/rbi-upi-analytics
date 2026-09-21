@@ -87,6 +87,24 @@ Server: 127.0.0.1:3307
 Database: rbi_warehouse
 ```
 
+## Data Source
+
+| Field | Detail |
+|-------|--------|
+| **Provider** | [Reserve Bank of India (RBI)](https://www.rbi.org.in/) |
+| **Publication** | Payment System Indicators (PSI) |
+| **Metrics used** | UPI transaction volume (lakh) and value (₹ crore), excluding UPI QR where filtered in ETL |
+| **Local files** | `data/raw/rbi_psi_YYYY_MM.xlsx` (36 monthly workbooks) |
+| **Coverage** | August 2023 – July 2026 |
+
+Public downloads: [RBI — Payment System Indicators](https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Payment%20System%20Indicators) · [Database on Indian Economy (DBIE)](https://dbie.rbi.org.in/)
+
+Raw RBI files are not committed to this repository; add them under `data/raw/` before running the pipeline.
+
+## Acknowledgment
+
+Payment statistics are sourced from the Reserve Bank of India. This repository is an independent portfolio and learning project and is **not** affiliated with, sponsored by, or endorsed by the RBI. 
+
 ## Project Outcome
 
 This project demonstrates practical skills in Python ETL, Airflow orchestration, Docker, MySQL warehousing, SQL analytics, data validation, and Power BI reporting.
