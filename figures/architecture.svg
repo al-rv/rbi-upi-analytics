@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="220" viewBox="0 0 820 220" font-family="Helvetica, Arial, sans-serif">
+  <rect width="820" height="220" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#000000"/>
+    </marker>
+  </defs>
+
+  <!-- Source -->
+  <rect x="30" y="70" width="130" height="70" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="95" y="98" text-anchor="middle" font-size="11" font-weight="bold">Data Sources</text>
+  <text x="95" y="116" text-anchor="middle" font-size="10">RBI PSI Excel</text>
+  <text x="95" y="130" text-anchor="middle" font-size="9">(36 monthly files)</text>
+
+  <!-- ETL -->
+  <rect x="200" y="70" width="130" height="70" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="265" y="98" text-anchor="middle" font-size="11" font-weight="bold">ETL Pipeline</text>
+  <text x="265" y="116" text-anchor="middle" font-size="10">Extract � Validate</text>
+  <text x="265" y="130" text-anchor="middle" font-size="10">Load</text>
+
+  <!-- Orchestration note -->
+  <rect x="200" y="155" width="130" height="28" fill="#f7f7f7" stroke="#000000" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="265" y="174" text-anchor="middle" font-size="9">Apache Airflow (Docker)</text>
+
+  <!-- Warehouse -->
+  <rect x="370" y="70" width="130" height="70" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="435" y="98" text-anchor="middle" font-size="11" font-weight="bold">Data Warehouse</text>
+  <text x="435" y="116" text-anchor="middle" font-size="10">MySQL 8.0</text>
+  <text x="435" y="130" text-anchor="middle" font-size="9">Star schema + views</text>
+
+  <!-- Analytics -->
+  <rect x="540" y="70" width="130" height="70" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="605" y="98" text-anchor="middle" font-size="11" font-weight="bold">Analytics Layer</text>
+  <text x="605" y="116" text-anchor="middle" font-size="10">SQL views</text>
+  <text x="605" y="130" text-anchor="middle" font-size="9">KPIs &amp; trends</text>
+
+  <!-- BI -->
+  <rect x="680" y="70" width="110" height="70" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  <text x="735" y="98" text-anchor="middle" font-size="11" font-weight="bold">Reporting</text>
+  <text x="735" y="116" text-anchor="middle" font-size="10">Power BI</text>
+  <text x="735" y="130" text-anchor="middle" font-size="9">Dashboard</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="105" x2="200" y2="105" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="330" y1="105" x2="370" y2="105" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="500" y1="105" x2="540" y2="105" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+  <line x1="670" y1="105" x2="680" y2="105" stroke="#000000" stroke-width="1" marker-end="url(#arrow)"/>
+
+  <!-- Caption -->
+  <text x="410" y="205" text-anchor="middle" font-size="11" font-style="italic">Figure 1. System architecture of the RBI UPI payment analytics platform.</text>
+</svg>

@@ -1,0 +1,43 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: rbi-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: rbi_warehouse
+      MYSQL_USER: rbi_user
+      MYSQL_PASSWORD: rbi_password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  airflow:
+    image: apache/airflow:2.10.5-python3.12
+    container_name: rbi-airflow
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+      _PIP_ADDITIONAL_REQUIREMENTS: "pandas openpyxl pymysql sqlalchemy"
+      MYSQL_HOST: mysql
+      MYSQL_PORT: "3306"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/logs:/opt/airflow/logs
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./data:/opt/airflow/data
+      - ./etl:/opt/airflow/etl
+    command: standalone
+volumes:
+  mysql_data:
